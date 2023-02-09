@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasta Wikepedia</title>
+
+
     <style>
         body {
             background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScrKVGFFwcp0vyRDaEWiIMo01NCQFIcTWC-Q&usqp=CAU);
@@ -14,72 +19,77 @@
         }
     </style>
 </head>
-</body>
-<center>
-    <h1 style="color: rgb(255, 255, 255);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 600%;">
-        Sasta Wikepedia
-    </h1>
-
-    <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACjCAMAAAA3vsLfAAABmFBMVEX///8AAAAjsU3+8gC15R3///7///z9//+3t7cYGBjj4+PW1ta25B99fX38/PyQqjkzqlK76h6z5hj/9xeZlijDw8MILhA8PDxeXl4NDQ10dHRHR0f/8AD///n4+Pju7u4lr08hskkuo1IpfkFPYhjD7jUfIRwwMDCGhCBra2uqqqirzDkmMQSbm5sAAAkrKxAkJCRMTEzBwcHq5Cw1Mg6NjY2goKAqMRcsLCwgHyT47yJLWCLb29kLEwCRkJJ9jj7F5E2KnkeitlXK7D+xyV5tfDlVVFiqvGfP62CNnlJETR09RSIwMSe6uMByhi7P0MpaZiyJojuow0pYWFN1dm3X2dPt6/S41VImWjkiYTQeQy8+ombp5SuCfTJhdC40kFBArGEOKxfDvTc3dk3U0T5HQxMpUTZoYR9Hj2AOHhBXXRatqjZYUx2/tz2evEAKFQk3dkXs6UwXazCOiROAnSUPIAAeLgBzaxZBUxQWFB8qi0X//F/W2CcPOBscNyYUUyby5CQdHAgwPBeu1zQ9Nx6OhzdqYTbTy0bK0mjXAAARz0lEQVR4nO1djV8TV5eeEzIzQMKQZOQNgcwkoY0UxBhQRBE1NavbF/v61X1FBRGqFOmH4G5t3dbaVXa3//aec2aSTJJJMoGZRPZ3n1+DNMDMnWeec+455565kSQBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQGB1tA0KXNx5OwwfSPgGYoyCIRZSdDmHbKygpxdxddKv4dysnAN4HrpS4DFfg/kZGEE4Eb5XwBG+j2QkwRZWgBYurkEMNjvoZwoKMYMTwm3+j2QkwMVX5piXksWk4ummEk9QFHoKzGlyZKZMSXJUBQZv8h9HtinDUPRpLGJWyMRqaIyfAOlZwja2gFJusY+bdCmTTMUiuJErtAWmhRBzubwNVx5Q4ksDAsH1wEyiu1fv/o7ZVX8v9JYCjkcN/s8rE8cmrSItFF2YNHG4qM4RMitLRTiabVmpBi93bxxG2Csl4M4cfcIA5BFu/Jh4WtIlfJssz2cFU6cS1AMTfrH+PzMGM6eHMKh2u6M9lptVZwU2ckyDlWmuy1bIe6K5dvG+3IBJ4U1hqJQrEb2KsuKNJZE1iYy/RiIdpKMVTEMxU6m8FtNykQiKyfqtvcFSBk7NbIQmb5q0gmzlr6ABIYKu5vRNM0wlH4P54SActCHIzwLrCiaKWTmDWijGUqnCgWAu0a/R3NyoEjzALf/PnoP4LJpiIKRJ5CJYnL1VTRcvgkwqAgj9QRZlQYB7sfDiegDgGuSEJsnaJJyF+B6Pp4o3wC4KAkj9QRNU0yA/Rvl8oMlgIgkAhBPIJouUulodR9TKgxHhNq8QMFJQLFKRzAhFvs8Q8FEXoqMfPPNv42hwYrAzSNkingxEKFlPs0QC1Yd4ORHQZ3Rv7Li+mMBzxCyE/AVmZHx1lgMrNBqjrVGJKiT+giriaEVAmpz0zKX2p11vIsjjUPKHTAE0wHdAHRdw0Uc52SyCZO0mJAMajEhM92OthnvBxpre9eD6gkl3pCf+WZjpAsbzwQ2lw7j4S+NRZowC132UEzQ3R2ZaAK1N04H1MWi8YMI88hb4+FNtKKZwDwbFeAnUeRNFxUpcprSzZFGAIaal3PNJNtKQKFAlbdrDT+YYdaCjD/orDN1Z9AkEzW42O1JzwJVH+ph4sFvBbtwqEnDQwD1Xmw4yHtlI5NsutxrXEjo7qwa8dZoLRddDMhvcL9R/Zx5lttBAj7xWJPzH4KhjNTdeTVkebyx68Iskg4CHj43BdY/vzFunTbYE2voP+tOESGxSd0nJ5W/q2KsFw9WoHdrvO9JSPUgr0IHWud/FqiyfARgFDhZxz8ay8KxRubxvI20TUOxB7SNNLjUwSPG1+YkJOv4X2yeJILACadNm4TpuuH+/6ZtokabTGX4Y6jNSZvcU9pka+yMXqpNU1VNNjRFPZbaTElFKIqqSkZv1SbXWmam4XQPusyINrxUvFJkTjoebdZdVmQ8XG/V5kSyV7Q9JIkYhorXezzfZtIB8GD8BtL2T19H6g6kbXJwtobBISj2hrbhTBUPM7NHpy1Z90bv1NaIy72hrViHo9M2NOLEZD9pk4NenB9pPGnhyLQ1oRdGSu1Ga2dqWDtHtCk9oO3RYweeHF1tqXNO7PdMbZ/nw+F4OI7Af/JLvaJtPZYNZRmxUPbg6LRdeH3ewgb+t/G0h7QlouFEIoyvRAJpwykh8BZepG0qlMvl6EX47Bi0LQ9Uoetf9Ji2MCORn8MARO6F2qZy2VwoG2K0o61t67pFWxoZS6eZt57SFq7Aok2Rgn7mm9XWDW0teGPadGbsE6BN/oRoqzxV7f6zqtoEbY1DnC4Wh1oUui21OZyboK0CWu+AZDu1DfiuNq1DmbkVbT6cuh0+cdo6PhUq1OaGYrJDZb3VTHr8U7eFFYCEGmiT7TJGFZppmppFm0mo/yneXNPybdU5wSfaqF2hreKsLCHqpK1IcVsP1Ea0hXLMGtE2K2lNtJ29lEwmuWkkRd0pxcG6GZUKTzZtFLWl8V9X2qgTYLgbWH0q8wtaSx/XQFuYaVMC7+GdINpCNrJWlsBVs/pfW2zI0p1bGVI5VzEtI7Vp091pQ8zCUDewT2cR5zb+YSsnddKWMmU16D57UhvbaM4SHNNGnNWft5m2Gm+cyVR8G9M2YNHmtt3hxZatSe0x79qCwzv13KmjbZO9TMC+TUPnEWMbtSX3DGCEaas/sQttVaiUAj5M2rTxS2ffdtflMo9I23jEXWyZy7C/5mAtHF0DmDTVgGsggwCPYtkc05bLZbOhrW17I5J6K12EqsnwN04jJc+GByr86oh2B/RvqbWw+VKHB7vBQtEmzX30fBeuUybvcG5XAP4haUHSpmnzVDeyDTSHtOViz+2mijraNPbkEZ5J2Vc7nxJWJdnAGaHwwsFaemB5pwDH721LtiFN4g7A1BoXjWohyAPaqUcJVG1jAN+h2Igvpg3ZW9+GoUzjjGAPsha3OXtTDFmTFwB2l9MVzgj6T41dIfx3XfJ4iUlr+UezAJv5atXIDkFQbmNGUGul5PK1cYCXtnUSZfjKbaHczkqNtPEohp201UCPntwC+EuvSY1o27hQ4JVrueEoXWGClNYywTKTUFiLco2yxlwc5TYeFG0KPTkSAXgSq4YfdsC7tQfFjOtIW2QJeCBU7fd62uHZkDj9B+o5on37grAXHJ9MnnmzbLk1R6JQXg3uCUlFlTR1BsWWDTXQFmO5ud2tVsmVQmL7tp42DN5eX6UV/4CcjEK7G00CPIjWuzbkL3qDlpyDOS1OfxKLLdSI7PoeTGcUF+9GCnTbj4ZU+6OjapRm2gZIbouSoQZxAbKhGeRQ75VpBcExkYZxWi3dDqxopaoGZQgvc020hUhus03erYomtSnUJPcTS8yRy6OV/g5QyATjZWTFMEjjD6LMWj1t8ftus5E/0NQVgPeNno2T0/V9TNhb0tZwGPQxmODsbCBNVdoqvH1BPYbBhFCYPqFDvVLiELfOUJG20kdIrQTTwMtt8S9DLmrLxR55X76ioaFqf9KdtNnk6a8BLj9UAll9wxAJxfYqarFWT1s4ep87YAPR+XAK3m/lGmcEy7vtw6T3a82Q2JwTQi3H+oLTMI/C7QqqdBfFVq6bDSzWohiNkNwCeo4E08yDap2twbs98t54y6r9QR+wa211eiO5Jc1AaNNoC/HRKAdsCedcysEvebfFQGjLnCaxhbJZK6lCZCsWi94NYJ6qbu0lR51dhmECnDtvhWrs1nRdr/o3/Vcy90CM9J8Atw+JoYRtoVF7buCJtbTEzwkYvtfdrgE8p5SqSluIvlq05ba+o8cMVLV91cpQqNKABzplEUV1trSuDzhWmV9QPSKQ4hc61PuYxEcpjU/Yeksk4sQZvpG/TsEn0ebrubVMEba3qlXdbGxriztBKlb6knbQb59AygrlyxqKDV5bswHqTF/myjhylmYB6r8WYCEIteHs/bHENhqN5svlPH/D3+WjceRv7Q0MmZrsa51X43Lh82zIpi0X+/PNm3/PUmpqFSxDsSeViLG1Y+IWXTrQF2yWyNF/XNjZ2dn9gZaZ01aKRXIL5BGiERIbp1TR+M97bz4vU8R255e5ubm3dzAEDpPcLtJWPn7eM00rwt46J/Fspb+lALZjnNETl2i8Lyvlsja0YTKqGactsZFfW/6xwOWxX3W9OjUs7waylytqfKnExhkN538pFOAMbQ51xappviXjXQP4T/Sqmo9GqlHF5XmsSlvoAFIF+M0RuuW23ruWK51Qad/RWSg8tVdeBpZ/hHu/byBP7/QBm8k0lStv+TynafyE2peWV4uGz0BqH+6QV7sCq1+VNonDRIL2JfP9w5uKsL9u1Yq4NvkHPH4Pf9r5qTU/vLQTlNa0GYai0GOUr635AF3bjwUU2l9Mm/1eGiXoe4KoaRrA1VLcCjaid+DePfiIs2r+CgqN6kavaDZFuZ2W/N3PjWrhlisLEW2/Aaw/hr0ta0Uhy7Nq7L31oEdr2mij4EEyycrEiQzt/n7+KewsM4v0QslxddzX287PYV7PJ1ht4fIvMDpKVBFtpDZ4c0ipQnnTx+BHlenpA9TIes5aHqWvB/BHDKn7rBa4IaNWdbyNa8CbTo/avqi2Z6Fv2//6dOHqX3rapoxey1z+wrP6seRr1e7MFBRKbKBI2yuAw0O00jzVdVNf72F+H+fcHmWXlHyaSFVF09QxElvWWq5CBxfbhoMsGuqfWWeuFdsjubUpYGgqFdV3az2USNvVnQsAF94RY7rl3Ni70SPSvqxdWhMjeuabeZoDkLb8JlzJ45e5Q6Lt6twvOFmcocgkUb6Hs5HsU4qi4hXMU3kyy8EHxbjPkMWDg/dwdSpXC91CsQN6Dl1xX1ZgGNo3VAuvLiGQkS7/14sPhV2dgri0bbwbt3F2MSR/6m5EvYLGskaejabSwzdw5eefkaFXcTLS0uGDvcJqmbwe7br4jV+ZHdIQAfhuyuYnG8vlHldWIw+cBZHs1j4UzKb1eceRqBbuKE8Sbejo9O/tBsEKbVwd97MMgg71ZplrkyiqV8BRTwE2w9G3FHvENwtvDpm28mrBr9kITZSei35WJQcNcxueHDx/frCNHi6Xq3U2oMvDiLG1R5KVcaqFDzhp29WXNy4gl3YJxKqDnKfFGL98s0J9Eyi2BBWIkJvNwtKXiFVYOsQA5G05X/pYmCtb1fFXXe1n0g4alycdCy88jz7DmTOGolt3VkRyWwCXzDaXG4GCTVDFt8GH778/V6B1hXSNt7RVHZc0H5iTcUZbAPRmCeYlHEYbvROPx/M4l46WV+HD6tslgJ8xrUdKqVwJK75M4hjITDSUJx/D31hln+Fc6qwj5bKP6rsWGjHDYktXedN32dR3vl3mpdJaFWnjA4Dpy2dPURZMtfCEJadoHAV1hr5D+j4vf87nX6Ksy6J11K/quKJgEvzHlsMYQ1PPpjjoiE39Vr8gk+XqeEuNoGp3Km0fttxevHj3boNSK91ZHh/QT1E9QnFb1ul6+DR7k9hYa5i9nznDJbfwmVeH8cNX9PxQOWoXRKLh0hz40BogkW/AJPggS2lnJY8Kodbs9WUrjKuILZttWx23auFO2nQ9XUdjtez2GkWgtJldvINXsh9YxTV7GYHIs5aYE1bVjX0ek2lVx/2gDcW2vRXyAF6ip3JZi+EPF+C/z6frq7qO0m4d9P/hrYT9mBYwDFgt2WsudU0MCa7yViu9VjBcelP9SKLjYZGXlLOuxfB62lCHVK5sVR3nWrgbbc1I6xsAQ36QppJDHY3XLfG1AAsx/6U/H4+bSWHumfPAGvdBk3dr8UFbeKALGwNeadOfFnB28WFKGL4MH0sJqup2QDiMKVY8XPrQyl66wkXybLVlg3Zgh/fIvX7BbYyn9HRnymwrpcUYP4x0hbono4nmFSsXsZEiS1dgyAcrnYEUJ/FeaCP39lmrGCQJH955p21A/19/PoN7hVqzuD7ZGTglRIk2HzYOHIf9dSoMeaCNqVtP0VJGM8whuL0xkHadAFxpO+VPlTdzCZZKic6ejRew0JjX9t02FOwaGDWsZ3PeSKPY5HmLGqlWZNq8eDZCmubS5l7erqHQTHSvlI97Q35t1VpSOC4wDf5uK+SVt9D6e1redkMlH/VCG/7e7+ca9qA6GhSDHlW4fX3UC+7fv7Pkuntl96DC4qP1rampWEdMba2/fGJlky4HwmD9wl/Luke83vVnXzJZkVaSXfWY3/Jl60CVt119/zcv2N6jhmP3z0DiHgbYPeUNT1FrlzJ+1ClxMObZ6ZRHzlLJWc2XgryqZsa7uVnXMCNyuVs0mKa9MNoi6dPWgVYXcfP+ra4YdvzNsUD5dOTiiEcMZmg11O2s9G5kZqgzXRYmB/3bHb2rHRS1Tg+kekTTU2htobR5Vo5+YJqmYZgdoVq9D8cffT9Bm4Upcicoskq7orVmWTFoGyiZnlRrD/5dw/ChbtRXUM9LZ9roctvqG/ni3ea4h8YV1RtAv676UTfqF2TaWU/2uJ7DhHSc/jqxJisGC1KRA35aMUDQZXj9Tb72tvl3ZwOtQfGjKC4gICAgICAgICAgICAgICAgICAgICAgICBwQvB/qZVa3MXLRqEAAAAASUVORK5CYII=">
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2 style="font: bold;
-color: rgb(214, 38, 38);
-font-size: 200%;
-font-family: Verdana, Geneva, Tahoma, sans-serif;"">
-This Website has been created to give you information about chemicals and our main motive is to give you a good knowlege about chemicals which will make the game easier for you. </h2>
-</center>
-<10br>
-
-<hr>
-
-<h2
-style=
-" color: gold; font: bold; font-size: 200%; font-weight: 400; font-family: 'Courier New' , Courier, monospace; ">--H2O(water)</h2>
-<h3
-style=" color: white; font-size: 150%; font-family: Verdana, Geneva, Tahoma, sans-serif;">-H2O is commonly known as
-        water.
-        The most common use of water is for drinking purposes.
+<body>
+    <center>
+        <h1 style="color: rgb(255, 255, 255);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 600%;">
+            Sasta Wikepedia
+        </h1>
+    
+        <img
+            src="data:image/png;base64,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">
+    
         <br>
-        -It is dihydrogen monoxide which contains two moles of hydrogen and one mole of oxygen.
         <br>
-        -This is in a liquid state at standard room temperature.
         <br>
-        -The freezing and boiling point of these molecules is 0 degree celcius and 100 degree celcius
         <br>
-        -The hydrogen atom and oxygen atom are connected through a covalent bond.
-
-        </h3>
-
         <br>
-        <hr>
-        <h2 style="color: gold;
+        <br>
+        <br>
+        <h2 style="font: bold;
+    color: rgb(214, 38, 38);
     font-size: 200%;
-    font-family: 'Courier New', Courier, monospace;
-    font: 400;
-    font-weight: bold;">--NaCL (Common Salt) </h2>
-        <h3 style="color: white;
-    font-size: 150%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    ">--Sodium chloride commonly known as salt (although sea salt also contains other chemical salts), is an ionic
-            compound with the chemical formula NaCl, representing a 1:1 ratio of sodium and chloride ions. With molar
-            masses of 22.99 and 35.45 g/mol respectively, 100 g of NaCl contains 39.34 g Na and 60.66 g Cl.
+    font-family: Verdana, Geneva, Tahoma, sans-serif;"">
+    This Website has been created to give you information about chemicals and our main motive is to give you a good knowlege about chemicals which will make the game easier for you. </h2>
+    </center>
+    <10br>
+    
+    <hr>
+    
+    <h2
+    style=
+    " color: gold; font: bold; font-size: 200%; font-weight: 400; font-family: 'Courier New' , Courier, monospace; ">--H2O(water)</h2>
+    <h3
+    style=" color: white; font-size: 150%; font-family: Verdana, Geneva, Tahoma, sans-serif;">-H2O is commonly known as
+            water.
+            The most common use of water is for drinking purposes.
             <br>
+            -It is dihydrogen monoxide which contains two moles of hydrogen and one mole of oxygen.
             <br>
+            -This is in a liquid state at standard room temperature.
             <br>
-            --In addition to the familiar domestic uses of salt, more dominant applications of the approximately 250
-            million tonnes per year production (2008 data) include chemicals and de-icing.[9]
-            <br><br><br>
-            --Salt is used, directly or indirectly, in the production of many chemicals, which consume most of the
-            world's production.
-        </h3>
-        <hr>
+            -The freezing and boiling point of these molecules is 0 degree celcius and 100 degree celcius
+            <br>
+            -The hydrogen atom and oxygen atom are connected through a covalent bond.
+    
+            </h3>
+    
+            <br>
+            <hr>
+            <h2 style="color: gold;
+        font-size: 200%;
+        font-family: 'Courier New', Courier, monospace;
+        font: 400;
+        font-weight: bold;">--NaCL (Common Salt) </h2>
+            <h3 style="color: white;
+        font-size: 150%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        ">--Sodium chloride commonly known as salt (although sea salt also contains other chemical salts), is an ionic
+                compound with the chemical formula NaCl, representing a 1:1 ratio of sodium and chloride ions. With molar
+                masses of 22.99 and 35.45 g/mol respectively, 100 g of NaCl contains 39.34 g Na and 60.66 g Cl.
+                <br>
+                <br>
+                <br>
+                --In addition to the familiar domestic uses of salt, more dominant applications of the approximately 250
+                million tonnes per year production (2008 data) include chemicals and de-icing.[9]
+                <br><br><br>
+                --Salt is used, directly or indirectly, in the production of many chemicals, which consume most of the
+                world's production.
+            </h3>
+            <hr>
+
+
+            <center><a href="Science Merge Setup (x86_64).exe"><button style="width: 300px; height: 100px; margin: 100px; color: blue; background-color: greenyellow;">Download Game</button></a></center>
+</body>
+</html>
